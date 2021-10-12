@@ -8,7 +8,7 @@ encrypt              = true
 workspace_key_prefix = "env"
 ##################reference example: https://dynamodb.us-east-1.amazonaws.com#################
 dynamodb_endpoint    = "https://dynamodb.us-east-1.amazonaws.com"
-dynamodb_table       = "aais-dev-state-lock-k8s-20211011 "
+dynamodb_table       = "aais-dev-state-lock-k8s-20211011"
 role_arn             = "arn:aws:iam::204025839480:role/tf_automation"
 session_name         = "terraform-session"
 external_id          = "terraform" #external id setup during IAM user and role setup for access
