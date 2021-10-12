@@ -24,6 +24,7 @@ jobs:
       TF_VAR_aws_external_id: ${{ secrets.aws_external_id }}
       aws_input_bucket : ${{ secrets.aws_input_bucket }}
 
+    if: $TF_VAR_aws_account_number == 'xyz'
     steps:
-      - run: echo "Going to print environment variables"
-      - run: echo $TF_VAR_aws_account_number
+    - run: echo "Going to print environment variables"
+    - run: echo $TF_VAR_aws_account_number
