@@ -26,4 +26,4 @@ jobs:
 
     steps:
       - run: echo "Going to print environment variables"
-      - run: env
+      - run: echo $TF_VAR_aws_account_number
