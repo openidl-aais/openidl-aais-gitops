@@ -26,5 +26,5 @@ jobs:
 
     steps:
       - name: "Check Account Number"
-        if: ${{ env.TF_VAR_aws_account_number == 'xyz' }}
+        if: ${{ env.TF_VAR_aws_account_number != 'xyz' }}
         run: echo "account number does not match"
