@@ -39,7 +39,6 @@ module "app_eks_control_plane_sg" {
     Name = "${local.std_name}-app-eks-ctrl-plane-sg",
   "Cluster_type" = "application" })
 }
-# temp comment
 #control plane security group for blockchain cluster (eks)
 module "blk_eks_control_plane_sg" {
   #for_each = {"app-eks-sg" = "aais_app_vpc", "blk-eks-sg" = "aais_blk_vpc"}
