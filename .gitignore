@@ -17,3 +17,5 @@ aws/k8s_resources/terraform.tfstate
 aws/k8s_resources/terraform.tfstate.*
 aws/k8s_resources/terraform.tfstate.d/.*
 aws/k8s_resources/.terraform.tfstate.lock.info
+aws/templates/.DS_Store
+aws/templates/aais_node/aais.tfvars
