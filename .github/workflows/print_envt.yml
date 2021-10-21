@@ -1,0 +1,30 @@
+name: Print Environment Variables
+on: [push]
+jobs:
+  print-the-variables:
+    environment: aais_dev
+    runs-on: ubuntu-latest
+    env:
+      TF_VAR_aws_account_number: ${{ secrets.aws_account_number }}
+      TF_VAR_aws_role_arn: ${{ secrets.aws_role_arn }}
+      TF_VAR_aws_user_arn: ${{ secrets.aws_user_arn }}
+      TF_VAR_aws_region: ${{ secrets.aws_region }}
+      TF_VAR_app_bastion_ssh_key: ${{ secrets.app_bastion_ssh_key }}
+      TF_VAR_blk_bastion_ssh_key: ${{ secrets.blk_bastion_ssh_key }}
+      TF_VAR_app_eks_worker_nodes_ssh_key: ${{ secrets.app_eks_worker_nodes_ssh_key }}
+      TF_VAR_blk_eks_worker_nodes_ssh_key: ${{ secrets.blk_eks_worker_nodes_ssh_key }}
+      TF_VAR_ses_email_identity: ${{ secrets.ses_email_identity }}
+      TF_VAR_userpool_email_source_arn: ${{ secrets.userpool_email_source_arn }}
+      TF_VAR_app_cluster_map_users: ${{ secrets.app_cluster_map_users }}
+      TF_VAR_blk_cluster_map_users: ${{ secrets.blk_cluster_map_users }}
+      TF_VAR_app_cluster_map_roles: ${{ secrets.app_cluster_map_roles }}
+      TF_VAR_blk_cluster_map_roles: ${{ secrets.blk_cluster_map_roles }}
+      TF_VAR_aws_access_key: ${{ secrets.aws_access_key }}
+      TF_VAR_aws_secret_key: ${{ secrets.aws_secret_key }}
+      TF_VAR_aws_external_id: ${{ secrets.aws_external_id }}
+      aws_input_bucket : ${{ secrets.aws_input_bucket }}
+
+    steps:
+      - name: "Check Account Number"
+        if: ${{ env.TF_VAR_aws_account_number != 'xyz' }}
+        run: echo "account number does not match"

@@ -5,6 +5,7 @@ resource "helm_release" "app_haproxy" {
   cleanup_on_fail = true
   name = "haproxy-ingress"
   chart ="resources/haproxy-app-cluster"
+  namespace = "app-ingress-controller"
   timeout = 600
   force_update = true
   wait = true
@@ -18,6 +19,7 @@ resource "helm_release" "blk_haproxy" {
   cleanup_on_fail = true
   name = "haproxy-ingress"
   chart ="resources/haproxy-blk-cluster"
+  namespace = "blk-ingress-controller"
   timeout = 600
   force_update = true
   wait = true
