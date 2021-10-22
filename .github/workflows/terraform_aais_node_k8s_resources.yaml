@@ -121,10 +121,7 @@ jobs:
             - name: Terraform Plan
               id: plan
               if: github.event_name == 'pull_request'
-              run: |
-                  terraform state rm helm_release.app_haproxy
-                  terraform state rm helm_release.blk_haproxy
-                  terraform plan -var-file=../aais_dev.tfvars -out=k8s_resources_plan.out -compact-warnings && terraform show -json k8s_resources_plan.out > k8s_resources_plan.out.json
+              run: terraform plan -var-file=../aais_dev.tfvars -out=k8s_resources_plan.out -compact-warnings && terraform show -json k8s_resources_plan.out > k8s_resources_plan.out.json
               continue-on-error: true
 
             - name: Terraform Plan Status
