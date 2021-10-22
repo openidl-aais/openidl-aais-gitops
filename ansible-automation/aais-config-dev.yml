@@ -8,9 +8,9 @@ gitops_repo_branch: "aais_dev"
 gitops_repo_user: ""
 gitops_repo_user_token: ""
 gitops_repo_user_email: ""
-ordererorg_domain: "aais.aaisdirect.com"
-domain: "aais.aaisdirect.com"
-internal_domain: "aais.internal.aaisdirect.com"
+ordererorg_domain: "openidl.aaisdirect.com"
+domain: "openidl.aaisdirect.com"
+internal_domain: "openidl.internal.aaisdirect.com"
 env: "dev"
 add_org: ""
 registry: ""
@@ -23,28 +23,10 @@ network:
     ordererorg_name: "ordererorg"
     organizations:
         - name: "analytics"
-          domain: "analytics.aaisdirect.com"
+          domain: ""
         - name: "carrier"
-          domain: "carrier.aaisdirect.com"
+          domain: ""
     channels:
-        - name: analytics-carrier
-          chaincode:
-              name: openidl-cc-aais-carriers
-              repo_url: github.com/openidl-org/openidl-main.git
-              repo_branch: develop
-              repo_path: openidl-chaincode/chaincode/openidl
-              collectionconfig:
-                  name: "analytics_carrier_pdc"
-                  policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
-        - name: analytics-aais
-          chaincode:
-              name: openidl-cc-aais-carriers
-              repo_url: github.com/openidl-org/openidl-main.git
-              repo_branch: develop
-              repo_path: openidl-chaincode/chaincode/openidl
-              collectionconfig:
-                  name: "analytics_aais_pdc"
-                  policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
         - name: defaultchannel
           chaincode:
               name: openidl-cc-default
