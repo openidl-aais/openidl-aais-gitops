@@ -1,7 +1,7 @@
 ##The below config declaration is applicable when using remote backend as S3 in terraform
 #This is the backend configuration required to setup for the first pipeline used to setup AWS resources
 
-bucket               = "analytics-dev-tf-state-backend-s3-20211026"
+bucket               = "analytics-dev-tf-backend-s3-20211026"
 key                  = "aws/terraform.tfstate"
 region               = "us-east-1"
 encrypt              = true
