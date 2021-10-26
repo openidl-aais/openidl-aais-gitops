@@ -1,8 +1,8 @@
 #The following inputs should be via git secrets as they contain sensitive data. refer to README.md
 ##################start of sensitive data that goes to git secrets###################
 aws_account_number = "441600422675" #mandatory
-aws_access_key = "AKIAWNULPWMJWPUMZEFG"
-aws_secret_key = "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"
+aws_access_key = ""
+aws_secret_key = ""
 aws_user_arn = "arn:aws:iam::441600422675:user/terraform_user"
 aws_role_arn = "arn:aws:iam::441600422675:role/tf_automation"
 aws_region = "us-east-1"         #mandatory
