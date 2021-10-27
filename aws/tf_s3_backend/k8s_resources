@@ -1,5 +1,5 @@
-#The below config declaration is applicable when using remote backend as S3 in terraform
-#This backend configuration is used for 2nd pipeline to setup k8s resources
+# The below config declaration is applicable when using remote backend as S3 in terraform
+# This backend configuration is used for 2nd pipeline to setup k8s resources
 
 bucket               = "analytics-dev-tf-backend-s3-20211026"
 key                  = "k8s/terraform.tfstate"
