@@ -1,6 +1,6 @@
 access_id: ""
 access_key: ""
-region: ""
+region: "us-east-1"
 cluster_name: ""
 account: ""
 gitops_repo_url: "github.com/openidl-aais/openidl-aais-gitops.git"
