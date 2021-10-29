@@ -38,7 +38,7 @@ network:
         #     collectionconfig:
         #       name: "analytics_trv_pdc"
         #       policy: "OR('analyticsMSP.member', 'trvMSP.member')"
-        - name: analytics-aais
+        - name: anal-aais
           chaincode:
               name: openidl-cc-aais-carriers
               repo_url: github.com/openidl-org/openidl-main.git
