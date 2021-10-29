@@ -42,3 +42,12 @@ network:
               collectionconfig:
                   name: "analytics_aais_pdc"
                   policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+        - name: anal-carr
+          chaincode:
+              name: openidl-cc-aais-carriers
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: "develop"
+              repo_path: openidl-chaincode/chaincode/openidl
+              collectionconfig:
+                  name: "analytics_carrier_pdc"
+                  policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
