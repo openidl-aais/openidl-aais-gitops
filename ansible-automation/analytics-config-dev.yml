@@ -23,10 +23,10 @@ network:
     ordererorg_name: "ordererorg"
     organizations:
         - name: "analytics"
-          domain: ""
+          domain: "analytics.aaisdirect.com"
           org_status: ""
         - name: "carrier"
-          domain: ""
+          domain: "carrier.openidl.aaisdirect.com"
           org_status: ""
     channels:
         # - name: analytics-trv
