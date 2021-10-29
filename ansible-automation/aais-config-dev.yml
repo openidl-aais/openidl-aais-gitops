@@ -23,9 +23,9 @@ network:
     ordererorg_name: "ordererorg"
     organizations:
         - name: "analytics"
-          domain: ""
+          domain: "analytics.aaisdirect.com"
         - name: "carrier"
-          domain: ""
+          domain: "carrier.openidl.aaisdirect.com"
     channels:
         - name: defaultchannel
           chaincode:
