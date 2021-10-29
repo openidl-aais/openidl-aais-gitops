@@ -29,7 +29,7 @@ network:
           domain: ""
           org_status: ""
     channels:
-        - name: analytics-carrier
+        - name: anal-carr
           chaincode:
             name: openidl-cc-aais-carriers
             repo_url: github.com/openidl-org/openidl-main.git
