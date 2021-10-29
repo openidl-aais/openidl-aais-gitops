@@ -33,7 +33,7 @@ network:
               repo_url: github.com/openidl-org/openidl-main.git
               repo_branch: develop
               repo_path: openidl-chaincode/chaincode/openidl
-        - name: analytics-aais
+        - name: anal-aais
           chaincode:
               name: openidl-cc-aais-carriers
               repo_url: github.com/openidl-org/openidl-main.git
