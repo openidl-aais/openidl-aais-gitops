@@ -26,6 +26,8 @@ network:
           domain: "analytics.aaisdirect.com"
         - name: "carrier"
           domain: "carrier.openidl.aaisdirect.com"
+        - name: "hig"
+          domain: "carrier.hig.aaisdirect.com"
     channels:
         - name: defaultchannel
           chaincode:
@@ -51,3 +53,12 @@ network:
               collectionconfig:
                   name: "analytics_carrier_pdc"
                   policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+        - name: anal-hig
+          chaincode:
+              name: openidl-cc-aais-carriers
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: "develop"
+              repo_path: openidl-chaincode/chaincode/openidl
+              collectionconfig:
+                  name: "analytics_hig_pdc"
+                  policy: "OR('analyticsMSP.member', 'higMSP.member')"
