@@ -72,5 +72,5 @@ network:
               repo_branch: "develop"
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                  name: "analytics_jog_pdc"
+                  name: "analytics_hig_pdc"
                   policy: "OR('analyticsMSP.member', 'higMSP.member')"
