@@ -1,56 +1,68 @@
 access_id: ""
 access_key: ""
-region: ""
+region: "us-east-1"
 cluster_name: ""
 account: ""
-gitops_repo_url: "github.com/openidl-org/openidl-aais-gitops.git"
-gitops_repo_branch: "baf-automation"
+gitops_repo_url: "github.com/openidl-aais/openidl-aais-gitops.git"
+gitops_repo_branch: "analytics_dev"
 gitops_repo_user: ""
 gitops_repo_user_token: ""
 gitops_repo_user_email: ""
-ordererorg_domain: "aais.techiething.com"
-domain: "analytics.techiething.com"
-internal_domain: "analytics.internal.techiething.com"
+ordererorg_domain: "openidl.aaisdirect.com"
+domain: "analytics.aaisdirect.com"
+internal_domain: "analytics.internal.aaisdirect.com"
 env: "dev"
-add_org: "" 
+add_org: ""
 registry: ""
 chaincode_version: ""
 node_type: "analytics"
 
 network:
-  org_name: "analytics"
-  ordererorg: "false"
-  ordererorg_name: "ordererorg"
-  organizations:
-    - name: ""
-      domain: ""
-      org_status: ""
-  channels:
-  - name: analytics-trv
-    chaincode:
-      name: openidl-cc-aais-carriers
-      repo_url: github.com/openidl-org/openidl-main.git
-      repo_branch: cognito-fabric-node14-helm
-      repo_path: openidl-chaincode/chaincode/openidl
-      collectionconfig:
-        - name: "analytics_trv_pdc"
-          policy: "OR('analyticsMSP.member', 'trvMSP.member')"
-        - name: "anal_trv_pdc"
-          policy: "OR('analyticsMSP.member', 'trvMSP.member')"
-  - name: analytics-aais
-    chaincode:
-      name: openidl-cc-aais-carriers
-      repo_url: github.com/openidl-org/openidl-main.git
-      repo_branch: cognito-fabric-node14-helm
-      repo_path: openidl-chaincode/chaincode/openidl
-      collectionconfig:
-        - name: "analytics_aais_pdc"
-          policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
-        - name: "anal_aais_pdc"
-          policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
-  - name: defaultchannel
-    chaincode:
-      name: openidl-cc-default
-      repo_url: github.com/openidl-org/openidl-main.git
-      repo_branch: cognito-fabric-node14-helm
-      repo_path: openidl-chaincode/chaincode/openidl
+    org_name: "analytics"
+    ordererorg: "false"
+    ordererorg_name: "ordererorg"
+    organizations:
+        - name: "carrier"
+          domain: "carrier.openidl.aaisdirect.com"
+        - name: "hig1"
+          domain: "carrier.hig1.aaisdirect.com"
+    channels:
+        - name: anal-aais
+          chaincode:
+              name: openidl-cc-aais-carriers
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: develop
+              repo_path: openidl-chaincode/chaincode/openidl
+              collectionconfig:
+                  - name: "analytics_aais_pdc"
+                    policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+                  - name: "anal_aais_pdc"
+                    policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+        - name: defaultchannel
+          chaincode:
+              name: openidl-cc-default
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: develop
+              repo_path: openidl-chaincode/chaincode/openidl
+        - name: anal-carr
+          chaincode:
+              name: openidl-cc-aais-carriers
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: "develop"
+              repo_path: openidl-chaincode/chaincode/openidl
+              collectionconfig:
+                  - name: "analytics_carrier_pdc"
+                    policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+                  - name: "anal_carr_pdc"
+                    policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+        - name: anal-hig1
+          chaincode:
+              name: openidl-cc-aais-carriers
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: "develop"
+              repo_path: openidl-chaincode/chaincode/openidl
+              collectionconfig:
+                  - name: "analytics_hig1_pdc"
+                    policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
+                  - name: "anal_hig1_pdc"
+                    policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
