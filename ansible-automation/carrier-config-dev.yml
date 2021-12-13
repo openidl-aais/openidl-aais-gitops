@@ -36,8 +36,10 @@ network:
             repo_branch: develop
             repo_path: openidl-chaincode/chaincode/openidl
             collectionconfig:
-              name: "analytics_carrier_pdc"
-              policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+              - name: "analytics_carrier_pdc"
+                policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+              - name: "anal_carr_pdc"
+                policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
         - name: defaultchannel
           chaincode:
             name: openidl-cc-default
