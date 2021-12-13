@@ -48,7 +48,6 @@ jobs:
             run:
                 shell: bash
                 working-directory: ansible-automation
-
         env:
             cluster_name: ${{ secrets.blk_cluster_name }}
             region: ${{ secrets.aws_region }}

@@ -22,25 +22,11 @@ network:
     ordererorg: "false"
     ordererorg_name: "ordererorg"
     organizations:
-        - name: "analytics"
-          domain: "analytics.aaisdirect.com"
-          org_status: ""
         - name: "carrier"
           domain: "carrier.openidl.aaisdirect.com"
-          org_status: ""
         - name: "hig1"
           domain: "carrier.hig1.aaisdirect.com"
-          org_status: ""
     channels:
-        # - name: analytics-trv
-        #   chaincode:
-        #     name: openidl-cc-aais-carriers
-        #     repo_url: github.com/openidl-org/openidl-main.git
-        #     repo_branch: cognito-fabric-node14-helm
-        #     repo_path: openidl-chaincode/chaincode/openidl
-        #     collectionconfig:
-        #       name: "analytics_trv_pdc"
-        #       policy: "OR('analyticsMSP.member', 'trvMSP.member')"
         - name: anal-aais
           chaincode:
               name: openidl-cc-aais-carriers
@@ -48,8 +34,10 @@ network:
               repo_branch: develop
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                  name: "analytics_aais_pdc"
-                  policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+                  - name: "analytics_aais_pdc"
+                    policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
+                  - name: "anal_aais_pdc"
+                    policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
         - name: defaultchannel
           chaincode:
               name: openidl-cc-default
@@ -63,8 +51,10 @@ network:
               repo_branch: "develop"
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                  name: "analytics_carrier_pdc"
-                  policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+                  - name: "analytics_carrier_pdc"
+                    policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
+                  - name: "anal_carr_pdc"
+                    policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
         - name: anal-hig1
           chaincode:
               name: openidl-cc-aais-carriers
@@ -72,5 +62,7 @@ network:
               repo_branch: "develop"
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                  name: "analytics_hig1_pdc"
-                  policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
+                  - name: "analytics_hig1_pdc"
+                    policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
+                  - name: "anal_hig1_pdc"
+                    policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
