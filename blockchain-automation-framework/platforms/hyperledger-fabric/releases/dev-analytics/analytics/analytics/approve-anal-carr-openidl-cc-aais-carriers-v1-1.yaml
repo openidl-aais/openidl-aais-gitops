@@ -1,0 +1,51 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: approve-anal-carr-openidl-cc-aais-carriers-v1-1
+  namespace: analytics-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: approve-anal-carr-openidl-cc-aais-carriers-v1-1
+  chart:
+    git: https://github.com/openidl-aais/openidl-aais-gitops.git
+    ref: analytics_dev
+    path: blockchain-automation-framework/platforms/hyperledger-fabric/charts/approve_chaincode
+  values:
+    metadata:
+      namespace: analytics-net
+      images:
+        fabrictools: hyperledger/fabric-tools:2.2.3
+        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+    peer:
+      name: peer0
+      address: peer0.analytics-net:7051
+      localmspid: analyticsMSP
+      loglevel: debug
+      tlsstatus: true
+    vault:
+      role: vault-role
+      address: http://vault.dev.analytics.internal.aaisdirect.com
+      authpath: devanalytics-net-auth
+      adminsecretprefix: analytics/crypto/peerOrganizations/analytics-net/users/admin 
+      orderersecretprefix: analytics/crypto/peerOrganizations/analytics-net/orderer
+      serviceaccountname: vault-auth
+      imagesecretname: regcred
+      tls: false
+    orderer:
+      address: orderer1.ordererorg.dev.openidl.aaisdirect.com:8443
+    chaincode:
+      builder: hyperledger/fabric-ccenv:2.2.3
+      name: openidl-cc-aais-carriers
+      version: v1
+      sequence: 1
+      commitarguments: ''
+      endorsementpolicies:  ''
+      collectionconfig: |-
+        WwogIHsKICAgICJuYW1lIjogImFuYWx5dGljc19jYXJyaWVyX3BkYyIsCiAgICAicG9saWN5Ijog
+        Ik9SKCdhbmFseXRpY3NNU1AubWVtYmVyJywgJ2NhcnJpZXJNU1AubWVtYmVyJykiLAogICAgInJl
+        cXVpcmVkUGVlckNvdW50IjogMCwKICAgICJtYXhQZWVyQ291bnQiOiAwLAogICAgImJsb2NrVG9M
+        aXZlIjogMAogIH0KXQoK
+      usecollectionconfig: true
+    channel:
+      name: anal-carr

@@ -44,32 +44,7 @@ network:
               repo_branch: "develop"
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                  name: "analytics_aais_pdc"
+                - name: "analytics_aais_pdc"
                   policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
-        - name: anal-carr
-          chaincode:
-              name: openidl-cc-aais-carriers
-              repo_url: github.com/openidl-org/openidl-main.git
-              repo_branch: "develop"
-              repo_path: openidl-chaincode/chaincode/openidl
-              collectionconfig:
-                  name: "analytics_carrier_pdc"
-                  policy: "OR('analyticsMSP.member', 'carrierMSP.member')"
-        - name: anal-hig
-          chaincode:
-              name: openidl-cc-aais-carriers
-              repo_url: github.com/openidl-org/openidl-main.git
-              repo_branch: "develop"
-              repo_path: openidl-chaincode/chaincode/openidl
-              collectionconfig:
-                  name: "analytics_hig_pdc"
-                  policy: "OR('analyticsMSP.member', 'higMSP.member')"
-        - name: anal-hig1
-          chaincode:
-              name: openidl-cc-aais-carriers
-              repo_url: github.com/openidl-org/openidl-main.git
-              repo_branch: "develop"
-              repo_path: openidl-chaincode/chaincode/openidl
-              collectionconfig:
-                  name: "analytics_hig1_pdc"
-                  policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
+                - name: "anal_aais_pdc"
+                  policy: "OR('analyticsMSP.member', 'aaisMSP.member')"
