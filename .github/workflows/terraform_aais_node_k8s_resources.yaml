@@ -7,27 +7,27 @@
 #Author: Rajesh Sanjeevi
 #Version: 1.0
 
-name: 'aais-node-openidl-k8s-resources-pipeline-v1.0'
+name: "aais-node-openidl-k8s-resources-pipeline-v1.0"
 on:
-  push:
-    paths:
-      - 'aws/k8s_resources/**'
-      - 'aws/tf_s3_backend/k8s_resources'
+    push:
+        paths:
+            - "aws/k8s_resources/**"
+            - "aws/tf_s3_backend/k8s_resources"
 
-    branches:
-      - aais_dev
-      - aais_test
-      - aais_prod
+        branches:
+            - aais_dev
+            - aais_test
+            - aais_prod
 
-  pull_request:
-    paths:
-      - 'aws/k8s_resources/**'
-      - 'aws/tf_s3_backend/k8s_resources'
+    pull_request:
+        paths:
+            - "aws/k8s_resources/**"
+            - "aws/tf_s3_backend/k8s_resources"
 
-    branches:
-      - aais_dev
-      - aais_test
-      - aais_prod
+        branches:
+            - aais_dev
+            - aais_test
+            - aais_prod
 
 jobs:
   aais_node_dev-aws_resources:

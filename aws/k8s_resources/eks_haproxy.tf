@@ -24,4 +24,3 @@ resource "helm_release" "blk_haproxy" {
   wait_for_jobs = true
   values = ["${file("resources/haproxy-blk-cluster/values.yaml")}"]
 }
-

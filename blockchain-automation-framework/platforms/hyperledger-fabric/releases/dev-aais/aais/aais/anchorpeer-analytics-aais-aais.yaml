@@ -1,0 +1,49 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: anchorpeer-analytics-aais-aais
+  namespace: aais-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: anchorpeer-analytics-aais-aais
+  chart:
+    git: https://github.com/openidl-aais/openidl-aais-gitops
+    ref: aais_dev
+    path: blockchain-automation-framework/platforms/hyperledger-fabric/charts/anchorpeer
+  values:
+    metadata:
+      namespace: aais-net
+      images:
+        fabrictools: hyperledger/fabric-tools:2.2.3
+        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+
+    peer:
+      name: peer0
+      address: peer0.aais-net.aais.dev.openidl.aaisdirect.com:8443
+      localmspid: aaisMSP
+      loglevel: debug
+      tlsstatus: true
+
+    vault:
+      role: vault-role
+      address: http://vault.dev.openidl.internal.aaisdirect.com
+      authpath: devaais-net-auth
+      adminsecretprefix: aais/crypto/peerOrganizations/aais-net/users/admin
+      orderersecretprefix: aais/crypto/peerOrganizations/aais-net/orderer
+      serviceaccountname: vault-auth
+      imagesecretname: regcred
+
+    channel:
+      name: analytics-aais      
+    orderer:
+      address: orderer1.ordererorg.dev.openidl.aaisdirect.com:8443
+    anchorstx: |-
+      CtcCChwKGggCGgYI4u7wiwYiDmFuYWx5dGljcy1hYWlzErYCCrMCCg5hbmFseXRpY3MtYWFpcxJg
+      El4KC0FwcGxpY2F0aW9uEk8IARJLCgdhYWlzTVNQEkAaBwoDTVNQEgAiCwoHUmVhZGVycxIAIgsK
+      B1dyaXRlcnMSACIKCgZBZG1pbnMSACIPCgtFbmRvcnNlbWVudBIAGr4BErsBCgtBcHBsaWNhdGlv
+      bhKrAQgBEqYBCgdhYWlzTVNQEpoBCAEaTgoLQW5jaG9yUGVlcnMSPxI1CjMKLnBlZXIwLmFhaXMt
+      bmV0LmFhaXMuZGV2Lm9wZW5pZGwuYWFpc2RpcmVjdC5jb20Q+0EaBkFkbWlucxoHCgNNU1ASACIP
+      CgtFbmRvcnNlbWVudBIAIgsKB1JlYWRlcnMSACILCgdXcml0ZXJzEgAiCgoGQWRtaW5zEgAqBkFk
+      bWlucw==
+
