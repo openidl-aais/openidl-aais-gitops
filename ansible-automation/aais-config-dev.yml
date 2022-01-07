@@ -30,6 +30,8 @@ network:
           domain: "carrier.hig1.aaisdirect.com"
         - name: "hig1"
           domain: "carrier.hig1.aaisdirect.com"
+        - name: "trv"
+          domain: "trv.travelersdemo.com"
     channels:
         - name: defaultchannel
           chaincode:
