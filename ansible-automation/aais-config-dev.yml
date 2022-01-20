@@ -30,6 +30,8 @@ network:
           domain: "carrier.hig1.aaisdirect.com"
         - name: "hig1"
           domain: "carrier.hig1.aaisdirect.com"
+        - name: "caru"
+          domain: "carrier.caru.aaisdirect.com"
     channels:
         - name: defaultchannel
           chaincode:
