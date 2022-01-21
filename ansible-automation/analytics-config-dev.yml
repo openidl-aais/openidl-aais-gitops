@@ -73,7 +73,5 @@ network:
               repo_branch: "develop"
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                  - name: "analytics_caru_pdc"
-                    policy: "OR('analyticsMSP.member', 'caruMSP.member')"
                   - name: "anal_caru_pdc"
                     policy: "OR('analyticsMSP.member', 'caruMSP.member')"
