@@ -66,3 +66,14 @@ network:
                     policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
                   - name: "anal_hig1_pdc"
                     policy: "OR('analyticsMSP.member', 'hig1MSP.member')"
+        - name: anal-caru
+          chaincode:
+              name: openidl-cc-aais-carriers
+              repo_url: github.com/openidl-org/openidl-main.git
+              repo_branch: "develop"
+              repo_path: openidl-chaincode/chaincode/openidl
+              collectionconfig:
+                  - name: "analytics_caru_pdc"
+                    policy: "OR('analyticsMSP.member', 'caruMSP.member')"
+                  - name: "anal_caru_pdc"
+                    policy: "OR('analyticsMSP.member', 'caruMSP.member')"
