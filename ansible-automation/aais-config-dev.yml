@@ -32,6 +32,8 @@ network:
           domain: "carrier.hig1.aaisdirect.com"
         - name: "caru"
           domain: "carrier.caru.aaisdirect.com"
+        - name: "trv"
+          domain: "trv.emergingtechdemo.com"
     channels:
         - name: defaultchannel
           chaincode:
