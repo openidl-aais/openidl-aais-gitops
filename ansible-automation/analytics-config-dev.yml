@@ -78,7 +78,6 @@ network:
                      policy: "OR('analyticsMSP.member', 'caruMSP.member')"
                    - name: "anal_caru_pdc"
                      policy: "OR('analyticsMSP.member', 'caruMSP.member')"
-        
         - name: anal-trv
           chaincode:
               name: openidl-cc-aais-carriers
