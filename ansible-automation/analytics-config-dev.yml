@@ -88,6 +88,6 @@ network:
               collectionconfig:
                 - name: "analytics_trv_pdc"
                   policy: "OR('analyticsMSP.member', 'trvMSP.member')"
-                - name: "anal_caru_pdc"
+                - name: "anal_trv_pdc"
                   policy: "OR('analyticsMSP.member', 'trvMSP.member')"
                 
