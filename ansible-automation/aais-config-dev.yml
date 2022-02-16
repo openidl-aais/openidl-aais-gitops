@@ -69,4 +69,21 @@ network:
                 - name: "analytics_caru_pdc"
                   # policy to be used in private data collection
                   policy: "OR('analyticsMSP.member', 'caruMSP.member')"
+        - name: anal-trv
+        # chaincode details to be used to install and commit in the channel
+          chaincode:
+              # chaincode name
+              name: openidl-cc-aais-carriers
+              # github repo url from which the chaincode should be installed (public repository)
+              repo_url: github.com/openidl-org/openidl-main.git
+              # github repo branch from which the chaincode should be picked
+              repo_branch: "develop"
+              # chaincode directory path in the github repo 
+              repo_path: openidl-chaincode/chaincode/openidl
+              # private data collection to be used while approving an committing the chaincode
+              collectionconfig:
+                # name of the private data collection
+                - name: "analytics_trv_pdc"
+                  # policy to be used in private data collection
+                  policy: "OR('analyticsMSP.member', 'trvMSP.member')"
 
