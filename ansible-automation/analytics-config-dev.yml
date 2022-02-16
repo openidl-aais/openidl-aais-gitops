@@ -85,8 +85,6 @@ network:
               repo_branch: "develop"
               repo_path: openidl-chaincode/chaincode/openidl
               collectionconfig:
-                - name: "analytics_trv_pdc"
-                  policy: "OR('analyticsMSP.member', 'trvMSP.member')"
                 - name: "anal_trv_pdc"
                   policy: "OR('analyticsMSP.member', 'trvMSP.member')"
                 
